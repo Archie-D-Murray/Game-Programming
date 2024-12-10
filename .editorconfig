@@ -1,0 +1,8 @@
+root = true
+
+[*.{h,hpp,c,cpp}]
+charset = utf-8
+indent_style = space
+indent_size = 4
+cpp_new_line_before_open_brace_block = same_line
+cpp_new_line_before_open_brace_namespace = same_line
