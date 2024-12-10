@@ -4,10 +4,9 @@
 #include "SoundManager.h"
 int main() {
     // Create the main window
+    
     sf::RenderWindow& window = WindowManager::getInstance().getWindow();
-
     sf::Clock timer;
-
     GameManager* game = new GameManager();
     SoundManager::Start();
     float dt = 0;

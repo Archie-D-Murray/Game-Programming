@@ -11,6 +11,14 @@ class LaserInitialisation : public LaserComponent {
     virtual void init() override {
         entity->speed = speed;
         entity->rotation = rotation;
+
+        if (!entity->getTexture().loadFromFile("./assets/laser.png")) {
+            std::cout << "Could not find texture!\n";
+        }
+        
+        entity->getSprite().setTexture(entity->getTexture());
+        entity->getSprite().setOrigin(16, 16);
+        entity->getSprite().setPosition(entity->getPosition());
     };
 };
 

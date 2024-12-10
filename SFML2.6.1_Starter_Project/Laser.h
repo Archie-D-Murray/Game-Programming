@@ -23,12 +23,7 @@ public:
     sf::Sprite laser;
     Laser() :Laser(sf::Vector2f(0, 0)) {}
 
-    Laser(sf::Vector2f position) : speed(0), position(position), rotation(0) {
-        texture.loadFromFile("./assets/laser.png");
-        laser.setTexture(texture);
-        laser.setOrigin(16, 16);
-        laser.setPosition(position);
-    }
+    Laser(sf::Vector2f position) : speed(0), position(position), rotation(0) { }
     
     ~Laser() {
         for (auto component : components) {
@@ -58,12 +53,16 @@ public:
         return laser.getGlobalBounds();
     }
 
-    sf::Texture getTexture() {
+    sf::Texture& getTexture() {
         return texture;
     }
 
     sf::Vector2f getPosition() {
         return laser.getPosition();
+    }
+
+    sf::Sprite& getSprite() {
+        return laser;
     }
 
     float getRadius() {
